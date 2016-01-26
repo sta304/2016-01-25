@@ -75,7 +75,7 @@
 
   </style>
 
-  <link href="data:text/css;charset=utf-8,p%2C%20li%2C%20pre%20%7B%0Acolor%3A%20black%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
+  <link href="data:text/css;charset=utf-8,p%2C%20li%2C%20pre%20%7B%0Acolor%3A%20black%3B%0A%7D%0Aslides%20%3E%20slide%20%7B%0Amargin%2Dtop%3A%20%2D500px%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
 
 
 </head>
@@ -162,7 +162,7 @@ V(\hat{\tau}) &amp;= N^2\frac{\sigma^2}{n}\left(\frac{N-n}{N-1}\right) \qquad \t
 
 </article></slide><slide class=''><hgroup><h2>sample size selection for estimating a mean - I</h2></hgroup><article  id="sample-size-selection-for-estimating-a-mean---i" class="build">
 
-<p>We would like to be within \(B\) of the true mean with probability 0.95. The sample size formula is based on:\[P\left(\left|{\overline{y}} - \mu\right| &lt; B\right) \approx 0.95\]and we know \(B = 2{\sqrt{\hat{V}({\overline{y}})}} = 2\sqrt{\frac{s^2}{n}\left(\frac{N-n}{N}\right)}\) is a solution to this equation.</p>
+<p>We would like to be within \(B\) of the true mean with probability 0.95. The sample size formula is based on:\[P\left(\left|{\overline{y}} - \mu\right| &lt; B\right) \approx 0.95\]and we know \(B = 2V({\overline{y}}) = 2\sqrt{\frac{\sigma^2}{n}\left(\frac{N-n}{N-1}\right)}\) is a solution to this equation.</p>
 
 <p>(Note that the &quot;2&quot; comes from \(z_{0.025}=1.96\) which solves the equation \(P(Z\le z_{\alpha/2}) = 0.95\) and if someone really wanted a different level of confidence, the next formula will be slightly different.)</p>
 
@@ -207,7 +207,7 @@ V(\hat{\tau}) &amp;= N^2\frac{\sigma^2}{n}\left(\frac{N-n}{N-1}\right) \qquad \t
 
 </article></slide><slide class=''><hgroup><h2>sample size selection for estimating a total</h2></hgroup><article  id="sample-size-selection-for-estimating-a-total">
 
-<p>As usual, the methods for population total follow from the methods for population mean. In this case the desired , call it now \(B_\tau\), is simply divided by \(N\) and used as in the previous formula with \(B = \frac{B_tau}{N}\).</p></article></slide>
+<p>As usual, the methods for population total follow from the methods for population mean. In this case the desired , call it now \(B_\tau\), is simply divided by \(N\) and used as in the previous formula with \(B = \frac{B_\tau}{N}\).</p></article></slide>
 
 
   <slide class="backdrop"></slide>
