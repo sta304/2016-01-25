@@ -58,9 +58,9 @@ along with the usual $\hat{\tau}\pm 2\SE{\hat{\tau}}$ or $B = 2\SE{\hat{\tau}}$.
 
 ## disappointing example (continued)
 
-Consider again the dentist, his toothpaste, and that population of $N=1000$ schoolchildren. The numbers of cavities in the `r (n <- 10)` children (from the table) were:
+Consider again the dentist, his toothpaste, and that population of $N=100$ schoolchildren. The numbers of cavities in the `r (n <- 10)` children (from the table) were:
 ```{r, echo=FALSE}
-N <- 1000
+N <- 100
 (cavities <- c(0, 4, 2, 3, 2, 0, 3, 4, 1, 1))
 n <- length(cavities)
 mu <- mean(cavities)
@@ -114,12 +114,12 @@ $$\begin{align*}
 
 ## cavity example (continued)
 
-Suppose now a public health department wants to further study the disgraceful state of local children's teeth. What sample size should be used to estimate the mean number of cavities to within a 0.1 bound on the error of estimation (95% confidence level implied, as always)?
+Suppose now a public health department wants to further study the disgraceful state of local children's teeth. What sample size should be used to estimate the mean number of cavities to within a `r (B <- 0.5)` bound on the error of estimation (95% confidence level implied, as always)?
 
-**Solution 1** - use the data from the previous study undertaken by the dentist in 4.19. The estimate for $\sigma$ is $\SE{\bar{y}} = `r se`$. Plug this into the formula to get:
-$$n=\frac{N\sigma^2}{(N-1)B^2/4 + \sigma^2} = \frac{(`r N`)(`r se^2`)}{(`r N-1`)(0.1)^2/4 + `r se^2`} = `r round(N*se^2/((N-1)*0.1^2/4 + se^2),3)`$$
+**Solution 1** - use the data from the previous study undertaken by the dentist in 4.19. The estimate for $\sigma^2$ is $s^2=$ `r (s2 <- round(var(cavities), 3))`. Plug this into the formula to get:
+$$n=\frac{N\sigma^2}{(N-1)B^2/4 + \sigma^2} = \frac{(`r N`)(`r s2`)}{(`r N-1`)(`r B`)^2/4 + `r s2`} = `r round(N*s2/((N-1)*B^2/4 + s2),3)`$$
 
-**Solution 2** - use the dentist's "gut" feeling that "most" children have between 0 and 5 cavities. Use $\sigma \approx (5-0)/4 = 1.25$ in the formula. This time you get $n = `r round(N*1.25^2/((N-1)*0.1^2/4 + 1.25^2),3)`$
+**Solution 2** - use the dentist's "gut" feeling that "most" children have between 0 and 5 cavities. Use $\sigma \approx (5-0)/4 = 1.25$ in the formula. This time you get $n = `r round(N*1.25^2/((N-1)*B^2/4 + 1.25^2),3)`$
 
 ## cavity example - some additional commentary
 
